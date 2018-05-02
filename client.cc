@@ -2,11 +2,13 @@
 
 using namespace std;
 
-int main(int argc , char *argv[]){
+int main(int argc , char **argv){
   
   int socket_desc;
   struct sockaddr_in server;
   char *parray;
+  string filename = "";
+  filename = argv[1];
 
   //Create socket
   socket_desc = socket(AF_INET , SOCK_STREAM , 0);
@@ -30,8 +32,7 @@ int main(int argc , char *argv[]){
 
   puts("Connected\n");
 
-  const char filename[] = "iceland.jpeg";
-  send_image(socket_desc, filename);
+  send_image(socket_desc, filename.c_str());
 
   receive_image(socket_desc);
 
