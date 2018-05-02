@@ -3,13 +3,14 @@
 
 using namespace std;
 
-int main(int argc , char *argv[]){
+int main(int argc , char **argv){
 
   int socket_desc , new_socket , c, read_size,buffer = 0;
   struct sockaddr_in server , client;
   char *readin;
   bool READY = false; //determine if the image processing has finish
-  const char filename[] = "iceland.jpeg";
+  string filename = "";
+  filename = argv[1];
 
   //Create socket
   socket_desc = socket(AF_INET , SOCK_STREAM , 0);
@@ -47,10 +48,8 @@ int main(int argc , char *argv[]){
   }
 
   receive_image(new_socket);
-  //while(!READY){}//wait for imag processing to complete
-
-  
-  send_image(new_socket,filename);
+  //while(!READY){}//wait for imag processing to complete 
+  send_image(new_socket,filename.c_str());
 
   close(socket_desc);
   fflush(stdout);
