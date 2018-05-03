@@ -6,4 +6,4 @@ cd ..
 
 cd client
 
-./client
+./client.sh
