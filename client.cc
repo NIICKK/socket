@@ -8,7 +8,9 @@ int main(int argc , char **argv){
   struct sockaddr_in server;
   char *parray;
   string filename = "";
+  string ip = "";
   filename = argv[1];
+  ip = argv[2];
 
   //Create socket
   socket_desc = socket(AF_INET , SOCK_STREAM , 0);
@@ -18,7 +20,7 @@ int main(int argc , char **argv){
   }
 
   memset(&server,0,sizeof(server));
-  server.sin_addr.s_addr = inet_addr("127.0.0.1");
+  server.sin_addr.s_addr = inet_addr(ip.c_str());
   server.sin_family = AF_INET;
   server.sin_port = htons( 8889 );
 
