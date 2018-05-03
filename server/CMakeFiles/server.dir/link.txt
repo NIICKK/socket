@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/server.dir/server.cc.o CMakeFiles/server.dir/imagTrans.cc.o  -o server 
