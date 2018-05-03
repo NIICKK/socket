@@ -7,4 +7,4 @@ transfer image between TCP client and server
 
 5. open another terminal
 6. cd to prokect directory and then cd to client dir
-7. ./client iceland.jpeg
+7. ./client iceland.jpeg 127.0.0.1
